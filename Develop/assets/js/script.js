@@ -55,5 +55,16 @@ $(document).ready(function () {
     dynamicSpan.text(formatBusinessHours);
     // we nest our textarea inside the div to match the structure of line 41 - 47
     dynamicDiv.append(dynamicTextArea);
+    // here we add a conditional to render the correct class name
+    if (isHourBefore) {
+      // if the time is  before
+      dynamicTextArea.addClass("past");
+    } else if (isHourAfter) {
+      // if the time is after
+      dynamicTextArea.addClass("future");
+    } else {
+      // or any other time (which would be this current hour)
+      dynamicTextArea.addClass("present");
+    }
   });
 });
