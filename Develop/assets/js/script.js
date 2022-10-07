@@ -86,4 +86,18 @@ $(document).ready(function () {
     // now we nest the icon inside the button
     dynamicButton.append(dynamicIcon);
   });
+  // here we use jquery to grab every single button on the page and
+  // listen for the click event handler
+  $("button").click(function () {
+    // this refers to the current button clicked
+    // looking at the structure of our dynamic elements
+    // we see that span, textarea and button are in the same block so they are siblings
+
+    // so we want the data attribute to be able to set this inside of our localstorage (since it's dynamic based on the index in the loop we need to do this)
+    let textareaElemData = $(this).siblings("textarea").attr("data");
+    // then we can also get the value inside the textarea
+    let textareaValue = $(this).siblings("textarea").val();
+    // localstorage.setitem asks for a key / value pair so here we set it so we can later read from it when refreshing the page
+    localStorage.setItem(textareaElemData, textareaValue);
+  });
 });
