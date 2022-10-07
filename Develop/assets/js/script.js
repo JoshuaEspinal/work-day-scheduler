@@ -66,5 +66,24 @@ $(document).ready(function () {
       // or any other time (which would be this current hour)
       dynamicTextArea.addClass("present");
     }
+    // now we add a dynamic data attribute in order to determine
+    // which text input is which based on the index of the array
+    // note the index for each item is [0, 1, 2, 3, 4, 5, 6, 7]
+    dynamicTextArea.attr("data", `data-textarea-${index}`);
+    // now we set the textarea value to be a value we retrieve from localstorage
+    // or it will be initially empty
+    dynamicTextArea.val(
+      localStorage.getItem("data-textarea" + `-${index}`) || ""
+    );
+    // now we add our button into our time-block row div
+    dynamicDiv.append(dynamicButton);
+
+    // we add our class to get the right styling
+    dynamicButton.addClass("saveBtn");
+    // we add a class from font-awesome to get the save icon here
+    // https://fontawesome.com/v3/icon/save
+    dynamicIcon.addClass("fa fa-save");
+    // now we nest the icon inside the button
+    dynamicButton.append(dynamicIcon);
   });
 });
