@@ -20,5 +20,28 @@ $(document).ready(function () {
     // here we are converting each hour to be am or pm -
     // refer to moment docs to find this format (o so like..)
     var formatBusinessHours = moment().hour(hour).format("h A");
+    // here we are checking if the hour we are currently indexed at is BEFORE current time
+    var isHourBefore = moment().hour(hour).isBefore(moment());
+    // here we are checking if the hour we are currently indexed at is AFTER current time
+    var isHourAfter = moment().hour(hour).isAfter(moment());
+
+    // here we are generating dynamic elements using jquery
+    var dynamicDiv = $("<div>");
+    var dynamicSpan = $("<span>");
+    var dynamicTextArea = $("<textarea>");
+    var dynamicButton = $("<button>");
+    var dynamicIcon = $("<i>");
+
+    // we want the structure for each time block to look like this
+
+    /* 
+          <div class='time-block row'>
+              <span class='hour'></span>
+              <textarea class='past/future/present'></textarea>
+              <button class='saveBtn'>
+                  <i class='fa fa-save'></i>
+              </button>
+          </div>
+          */
   });
 });
