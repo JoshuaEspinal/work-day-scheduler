@@ -40,22 +40,29 @@ textarea {
   background-color: #ffffff;
   color: #000000;
   border-top: 1px dashed #000000;
+  /* adding flex of 1 */
+  flex: 1;
 }
 
 .past {
   background-color: #d3d3d3;
   color: white;
-  flex: 10;
+  /* we want center to grow as much as possible */
+  flex: 4 4 auto;
 }
 
 .present {
   background-color: #ff6961;
   color: white;
+  /* we want center to grow as much as possible */
+  flex: 4 4 auto;
 }
 
 .future {
   background-color: #77dd77;
   color: white;
+  /* we want center to grow as much as possible */
+  flex: 4 4 auto;
 }
 
 .saveBtn {
@@ -64,6 +71,7 @@ textarea {
   border-bottom-right-radius: 15px;
   background-color: #06aed5;
   color: white;
+  /* adding flex of 1 */
   flex: 1;
 }
 
