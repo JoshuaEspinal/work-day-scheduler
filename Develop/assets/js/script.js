@@ -43,5 +43,17 @@ $(document).ready(function () {
               </button>
           </div>
           */
+    // we append our div to our div with the class of container
+    container.append(dynamicDiv);
+    // here we add classes we need to this div
+    dynamicDiv.addClass("time-block row");
+    // we nest our span inside of our new div
+    dynamicDiv.append(dynamicSpan);
+    // we add the hour class to style this span
+    dynamicSpan.addClass("hour");
+    // here we set the text of our span to be the formatted version of each item inside the array
+    dynamicSpan.text(formatBusinessHours);
+    // we nest our textarea inside the div to match the structure of line 41 - 47
+    dynamicDiv.append(dynamicTextArea);
   });
 });
